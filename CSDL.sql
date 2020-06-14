@@ -1,6 +1,6 @@
-﻿CREATE DATABASE CakeBakery
-use CakeBakery
-drop database CakeBakery
+﻿--CREATE DATABASE CakeBakery
+--use CakeBakery
+--drop database CakeBakery
 CREATE DATABASE CakeBakery3
 USE CakeBakery3
 GO
