@@ -1,0 +1,75 @@
+﻿@model DoAnCoSo.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Xoasanpham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>XÁC NHẬN THÔNG TIN CẦN XÓA</h2>
+
+<h3>Bạn chắc chắn muốn xóa sản phẩm này?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="text-align:center">
+            TÊN SẢN PHẨM:
+        </dt>
+
+        <dd style="text-align:center">
+            @Html.DisplayFor(model => model.TEN_SP)
+        </dd>
+
+        <dt style="text-align:center">
+            TÊN DANH MỤC:
+        </dt>
+
+        <dd style="text-align:center">
+            @Html.DisplayFor(model => model.MaDM)
+        </dd>
+
+        <dt style="text-align:center">
+            SỐ LƯỢNG:
+        </dt>
+
+        <dd style="text-align:center">
+            @Html.DisplayFor(model => model.SOLUONG_SP)
+        </dd>
+
+        <dt style="text-align:center">
+            ẢNH BÌA:
+        </dt>
+
+        <dd style="text-align:center">
+            <img src="@Url.Content("~/img/sanpham/"+Model.ANHBIA)" width="120px" />
+        </dd>
+
+        <dt style="text-align:center">
+            MÔ TẢ:
+        </dt>
+
+        <dd style="text-align:center">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt style="text-align:center">
+            ĐƠN GIÁ:
+        </dt>
+
+        <dd style="text-align:center">
+            @String.Format("{0:0,0}", Model.GIA_SP) VND
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="text-align:center">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+            
+        </div>
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+     }
+</div>

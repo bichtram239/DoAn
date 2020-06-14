@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DoAnCoSo.Models.SANPHAM>
+@{
+    ViewBag.Title = "Sptheodanhmuc";
+    Layout = "~/Views/Shared/_LayoutSanpham.cshtml";
+}
+<div class="cake_feature_row row">
+    @foreach (var banhdm in Model)
+    { <div class="col-lg-4 col-md-4 col-6">
+        <a href="@Url.Action("Details", "Cake",new { id=banhdm.MaSP})">
+            <div class="cake_feature_item">
+                <div class="cake_img">
+                    <img alt="@banhdm.TEN_SP" src="~/img/sanpham/@banhdm.ANHBIA" width="200" height="250" />
+                    <h4> @banhdm.TEN_SP </h4>
+                    <h4><font color="red">@banhdm.GIA_SP VNÐ</font></h4>
+                </div>
+
+                <!--@*<a class="pest_btn" href="~/Cake/Details.html">Chi ti?t</a>*@-->
+            </div>
+        </a>
+    </div>
+
+    }
+</div>
+
