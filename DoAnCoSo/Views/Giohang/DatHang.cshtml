@@ -1,0 +1,64 @@
+﻿@using DoAnCoSo.Models
+@model List<Giohang>
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_LayoutDathang.cshtml";
+}
+@{ KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];}
+<div class="col-lg-7">
+    <div class="main_title">
+        <h2>Thông tin khách hàng</h2>
+    </div>
+    <div class="billing_form_area">
+        <form class="billing_form row" action="http://galaxyanalytics.net/demos/cake/theme/cake-html/contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+         @using (Html.BeginForm())
+         {
+            <div class="form-group col-md-12">
+                <label for="company">Họ và tên</label>
+                <td style="font-weight:bold">@kh.HoTen</td>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="address">Địa chỉ</label>
+                <td style="font-weight:bold">@kh.DiachiKH</td>                
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="email">Email </label>
+                <td style="font-weight:bold">@kh.Email</td>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phone">Số điện thoại</label>
+                <td style="font-weight:bold">@kh.DienthoaiKH</td>
+            </div>
+
+
+            
+            <div class="form-group col-md-6">
+                <label for="phone">Ngày đặt</label>
+                @DateTime.Now.ToShortDateString()
+             </div>
+            
+            <div style="text-align:center">
+                <input type="Submit" value="Đặt hàng" />
+            </div>
+         }
+        </form>
+    </div>
+</div>
+
+<div class="col-lg-5">
+    <div class="order_box_price">
+        <div class="main_title">
+            <h2>Thông tin đơn hàng</h2>
+        </div>
+        <div class="payment_list">
+            <div class="price_single_cost">
+                <h5>Thông tin <span>Tổng</span></h5>
+                <h4>Tổng số lượng <span>@ViewBag.TongSoLuong</span></h4>
+                <h5>Phí giao hàng<span class="text_f">Miễn phí</span></h5>
+                <h4>Tổng tiền <span>@String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</span></h4>
+            </div>
+            
+        </div>
+    </div>
+</div>

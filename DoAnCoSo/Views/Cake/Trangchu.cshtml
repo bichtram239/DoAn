@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DoAnCoSo.Models.SANPHAM>
+@{
+    ViewBag.Title = "Trangchu";
+    Layout = "~/Views/Shared/_LayoutTrangchu.cshtml";
+}
+
+    <div class="main_title">
+        <h2>Nổi bật nhất</h2>
+        <h5> Những chiếc bánh sáng giá nhất</h5>
+    </div>
+<div class="cake_feature_row row">
+    @foreach (var banh in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-6">
+            <div class="cake_feature_item">
+                <div class="cake_img">
+                    <a href="@Url.Action("Details","Cake",new { id=banh.MaSP})">
+                        <img alt="@banh.TEN_SP" src="~/img/sanpham/@banh.ANHBIA" width="150" height="200" />
+                    </a>
+                </div>
+                <div class="cake_text">
+                    <h3><font color="red">@banh.GIA_SP VNĐ</font></h3>
+                    <h2>@banh.TEN_SP</h2>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

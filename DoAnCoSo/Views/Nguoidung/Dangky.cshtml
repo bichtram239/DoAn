@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutTaikhoan.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <span class="login100-form-title p-b-33">
+        ĐĂNG KÝ THÀNH VIÊN
+    </span>
+    @Html.ValidationSummary(true)
+    <div class="wrap-input100 validate-input">
+        <input class="input100" type="text" name="HotenKH" placeholder="Họ và tên của bạn">
+        <font color="red"> @ViewData["Loi1"]</font>
+    </div>
+    <div class="wrap-input100 rs1 validate-input">
+        <input class="input100" type="text" name="TenDN" placeholder="Tên đăng nhập">
+        <font color="red"> @ViewData["Loi2"]</font>
+    </div>
+    <div class="wrap-input100 rs2 validate-input">
+        <input class="input100" type="password" name="MatKhau" placeholder="Mật khẩu">
+        <font color="red"> @ViewData["Loi3"]</font>
+    </div>
+    <div class="wrap-input100 rs4 validate-input">
+        <input class="input100" type="password" name="Matkhaunhaplai" placeholder="Nhập lại mật khẩu">
+        <font color="red"> @ViewData["Loi4"]</font>
+    </div>
+    <div class="wrap-input100 rs5 validate-input">
+        <input class="input100" type="text" name="Diachi" placeholder="Địa chỉ của bạn">
+        <font color="red"> @ViewData["Loi5"]</font>
+    </div>
+    <div class="wrap-input100 rs6 validate-input">
+        <input class="input100" type="text" name="Email" placeholder="Mail của bạn">
+        <font color="red"> @ViewData["Loi6"]</font>
+    </div>
+    <div class="wrap-input100 rs7 validate-input">
+        <input class="input100" type="text" name="DienthoaiKH" placeholder="Số điện thoại của bạn">
+        <font color="red"> @ViewData["Loi7"]</font>
+    </div>
+
+
+    <div class="container-login100-form-btn m-t-20">
+        <button type="submit" class="login100-form-btn"> Đăng ký</button>
+
+    </div>
+}
+
