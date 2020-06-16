@@ -11,8 +11,8 @@ CREATE TABLE NGUOIDUNG
 	Hoten nVarchar(50)
 	CONSTRAINT PK_Nguoidung PRIMARY KEY(UserAdmin)
 )
-drop table KHACHHANG
-drop table SANPHAM
+--drop table KHACHHANG
+--drop table SANPHAM
 GO
 CREATE TABLE KHACHHANG
 (
